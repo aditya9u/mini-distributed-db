@@ -6,6 +6,8 @@
 
 class StorageEngine {
 public:
+    StorageEngine(const std::string& database);
+
     void set(const std::string& key, const std::string& value);
 
     std::string get(const std::string& key);
@@ -14,8 +16,13 @@ public:
 
     bool exists(const std::string& key);
 
+    void loadFromDisk();
+
+    void saveToDisk();
+
 private:
     std::unordered_map<std::string,std::string> data_;
+    std::string databaseFile_;
 };
 
 #endif
