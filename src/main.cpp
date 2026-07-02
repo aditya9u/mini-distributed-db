@@ -1,6 +1,11 @@
 #include <iostream>
+#include "logger/logger.hpp"
+
 
 int main() {
-    std::cout << "Mini Distributed Database Started!" << std::endl;
+    Logger logger;
+
+    logger.info("Mini Distributed Database Started!");
+
     return 0;
 }
