@@ -4,6 +4,7 @@
 #include <string>
 #include "logger/logger.hpp"
 #include "storage/storage_engine.hpp"
+#include "command/command_registry.hpp"
 
 class Commandprocessor {
   public:
@@ -14,6 +15,7 @@ class Commandprocessor {
   private:
       StorageEngine& storage_;
       Logger& logger_;
+      CommandRegistry commands_;
 
 };
 

@@ -12,4 +12,5 @@ add_executable(mini_db
     src/logger/logger.cpp
     src/storage/storage_engine.cpp
     src/command/command_processor.cpp
+    src/command/command_registry.cpp
 )
