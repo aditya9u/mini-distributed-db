@@ -3,6 +3,7 @@
 
 #include <string>
 #include <unordered_map>
+#include "storage/wal.hpp"
 
 class StorageEngine {
 public:
@@ -23,6 +24,7 @@ public:
 private:
     std::unordered_map<std::string,std::string> data_;
     std::string databaseFile_;
+    WAL wal_;
 };
 
 #endif

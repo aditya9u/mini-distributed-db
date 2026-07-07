@@ -4,13 +4,16 @@
 #include <fstream>
 
     StorageEngine::StorageEngine(const std::string& database):
-    databaseFile_(database)
+    databaseFile_(database),
+    wal_("database.log")
     {
       loadFromDisk();
+      wal_.replay(*this);
     }
 
     void StorageEngine::set(const std::string& key, const std::string& value){
       data_[key]=value;
+      wal_.append("SET"+key+" "+value);
       saveToDisk();
 
     }
